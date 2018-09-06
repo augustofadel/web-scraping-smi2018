@@ -1,0 +1,144 @@
+---
+title: "web-scraping-smi2018"
+author: "Augusto Fadel"
+date: "6 de novembro de 2018"
+output: 
+  ioslides_presentation:
+    logo: images/ibge.png
+    # widescreen: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Repositório {.flexbox .vcenter}
+
+<center>
+
+```{r echo=FALSE, fig.cap="augustofadel/web-scraping-smi2018", out.width = '10%'}
+knitr::include_graphics("images/githubicon.svg")
+```
+
+</center>
+
+<br><br>
+
+- Slides
+- Scripts
+- Informações adicionais
+
+## Web Scraping  {.flexbox .vcenter}
+
+<center>
+
+```{r echo=FALSE, out.width = '50%'}
+knitr::include_graphics("images/qmark.png")
+```
+
+</center>
+
+## Web Data
+
+- Download
+- APIs (Application Programming Interfaces)
+- **Web scraping**
+- Crawler
+
+<center>
+
+```{r echo=FALSE, out.height = '250px'}
+knitr::include_graphics("images/structured_data.png")
+knitr::include_graphics("images/white_space.png")
+knitr::include_graphics("images/unstructured_data_3.png")
+```
+
+</center>
+
+## Web Data {.flexbox .vcenter}
+
+<center>
+
+```{r echo=FALSE, out.height = '200px'}
+knitr::include_graphics("images/R.png")
+knitr::include_graphics("images/python.png")
+knitr::include_graphics("images/selenium.png")
+```
+
+</center>
+
+## Download {.flexbox .vcenter}
+
+<center>
+
+```{r echo=FALSE, out.width = '400px'}
+knitr::include_graphics("images/download.png")
+```
+
+Série histórica do levantamento de preços e de margens de comercialização de combustíveis: [anp.gov.br](http://www.anp.gov.br/precos-e-defesa/234-precos/levantamento-de-precos/868-serie-historica-do-levantamento-de-precos-e-de-margens-de-comercializacao-de-combustiveis)
+
+</center>
+
+## APIs {.flexbox .vcenter}
+
+<center>
+
+```{r echo=FALSE, out.width = '500px'}
+knitr::include_graphics("images/cards_3.png")
+```
+
+The Star Wars API: [swapi.co](https://swapi.co/)  
+<br>
+Best Buy Developer API: [BBYOpen](https://bestbuyapis.github.io/api-documentation/#overview)
+
+</center>
+
+## Web Scraping {.flexbox .vcenter}
+
+<center>
+
+```{r echo=FALSE, out.width = '300px'}
+knitr::include_graphics("images/web_scraping_5.jpg")
+```
+
+Amazon: [amazon.com.br](https://www.amazon.com.br/)  
+<br>
+Supermercado Pão de Açúcar: [paodeacucar.com](https://www.paodeacucar.com/)  
+<br>
+GOL Linhas Aéreas: [voegol.com.br](https://voegol.com.br/pt)
+
+</center>
+
+## Obrigado {.flexbox .vcenter}
+
+<center>
+
+### **Augusto Fadel**  
+###### DPE/CEEC/GCAD  
+<br>
+```{r echo=FALSE, out.width = "30px"}
+knitr::include_graphics("images/phone.png")
+```
++55 21 2142-0452  
+<br>
+```{r echo=FALSE, out.width = "30px"}
+knitr::include_graphics("images/email.png")
+```
+augusto.fadel@ibge.gov.com  
+<br>
+```{r echo=FALSE, out.width = "30px"}
+knitr::include_graphics("images/email.png")
+```
+augustofadel@gmail.com  
+<br>
+```{r echo=FALSE, out.width = "30px"}
+knitr::include_graphics("images/githubicon.svg")
+```
+[augustofadel](https://github.com/augustofadel)  
+<br>
+```{r echo=FALSE, out.width = "40px"}
+knitr::include_graphics("images/linkedin.png")
+```
+[augustofadel](www.linkedin.com/in/augustofadel)
+
+</center>

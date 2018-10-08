@@ -1,25 +1,41 @@
 ---
-title: "web-scraping-smi2018"
-author: "Augusto Fadel"
-date: "6 de novembro de 2018"
+title: web-scraping-smi2018
+author: Augusto Fadel
+date: 6 de novembro de 2018
 output: 
   ioslides_presentation:
     logo: images/ibge.png
     # widescreen: true
+    # self_contained: no
+    # incremental: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Repositório {.flexbox .vcenter}
+# Comentários iniciais
+
+## Comentários iniciais {.flexbox .vcenter}
 
 <center>
+```{r echo=FALSE, out.height = '170px'}
+knitr::include_graphics("images/target-icon.png")
+knitr::include_graphics("images/white_space.png")
+knitr::include_graphics("images/graduation.png")
+knitr::include_graphics("images/white_space.png")
+knitr::include_graphics("images/RStudio.png")
+knitr::include_graphics("images/white_space.png")
+knitr::include_graphics("images/Octocat.png")
+```  
+</center>
 
+## Repositório  {.flexbox .vcenter}
+
+<center>
 ```{r echo=FALSE, fig.cap="augustofadel/web-scraping-smi2018", out.width = '10%'}
 knitr::include_graphics("images/githubicon.svg")
 ```
-
 </center>
 
 <br><br>
@@ -27,6 +43,8 @@ knitr::include_graphics("images/githubicon.svg")
 - Slides
 - Scripts
 - Informações adicionais
+
+# Web Scraping
 
 ## Web Scraping  {.flexbox .vcenter}
 
@@ -84,7 +102,17 @@ Série histórica do levantamento de preços e de margens de comercialização d
 <center>
 
 ```{r echo=FALSE, out.width = '500px'}
-knitr::include_graphics("images/cards_3.png")
+knitr::include_graphics("images/api_2.png")
+```
+
+</center>
+
+## APIs {.flexbox .vcenter}
+
+<center>
+
+```{r echo=FALSE, out.width = '500px'}
+knitr::include_graphics("images/cards.png")
 ```
 
 The Star Wars API: [swapi.co](https://swapi.co/)  
@@ -98,7 +126,7 @@ Best Buy Developer API: [BBYOpen](https://bestbuyapis.github.io/api-documentatio
 <center>
 
 ```{r echo=FALSE, out.width = '300px'}
-knitr::include_graphics("images/web_scraping_5.jpg")
+knitr::include_graphics("images/web_scraping_4.png")
 ```
 
 Amazon: [amazon.com.br](https://www.amazon.com.br/)  
@@ -122,23 +150,13 @@ knitr::include_graphics("images/phone.png")
 +55 21 2142-0452  
 <br>
 ```{r echo=FALSE, out.width = "30px"}
-knitr::include_graphics("images/email.png")
-```
-augusto.fadel@ibge.gov.com  
-<br>
-```{r echo=FALSE, out.width = "30px"}
-knitr::include_graphics("images/email.png")
+knitr::include_graphics("images/mail.png")
 ```
 augustofadel@gmail.com  
 <br>
-```{r echo=FALSE, out.width = "30px"}
-knitr::include_graphics("images/githubicon.svg")
-```
-[augustofadel](https://github.com/augustofadel)  
-<br>
-```{r echo=FALSE, out.width = "40px"}
-knitr::include_graphics("images/linkedin.png")
-```
-[augustofadel](www.linkedin.com/in/augustofadel)
+
+[![github](images/github.png)](https://github.com/augustofadel)
+[![linkedin](images/linkedin.png)](www.linkedin.com/in/augustofadel)  
+
 
 </center>

@@ -47,7 +47,7 @@ vignette('selectorgadget')
 # Exemplo 1: Amazon -------------------------------------------------------
 # https://www.amazon.com.br/robots.txt
 
-# install.packages('rvest')
+# install.packages(c('rvest', 'lubridate'))
 library(rvest)
 library(tidyverse)
 library(lubridate)
@@ -79,9 +79,39 @@ disponibilidade <-
 
 # Coletar relação de produtos
 url_base <- 'https://www.amazon.com.br/gp/product'
-produtos <- c('8525432180', '8525420816', '8537818003', '8544105378', '8516085511', '8593828620', '8501106585', '8575596543', '8520920713', '857559057X')
-nodes <- c('//*[@id="productTitle"]', '//*[@id="byline"]/span[1]/a', '//*[@id="soldByThirdParty"]/span', '//*[@id="availability"]/span')
-variaveis <- c('titulo', 'autor', 'valor', 'disponibilidade')
+produtos <- 
+  c(
+    # '8525432180', 
+    # '8525420816', 
+    # '8537818003', 
+    # '8544105378', 
+    # '8516085511', 
+    # '8593828620', 
+    # '8501106585', 
+    # '8575596543', 
+    # '8520920713', 
+    # '857559057X',
+    '1491910399',
+    '858057952X',
+    '8537801550',
+    '853900383X',
+    '8520936873',
+    '0321751043'
+  )
+nodes <- 
+  c(
+    '//*[@id="productTitle"]', 
+    '//*[@id="byline"]/span[1]/a', 
+    '//*[@id="soldByThirdParty"]/span', 
+    '//*[@id="availability"]/span'
+  )
+variaveis <- 
+  c(
+    'titulo', 
+    'autor', 
+    'valor', 
+    'disponibilidade'
+  )
 
 dat <- 
   map(
@@ -175,75 +205,145 @@ server$getStatus()
 url <- 'https://voegol.com.br/pt'
 server$navigate(url)
 server$getCurrentUrl()
-# server$goForward()
 # server$goBack()
+# server$goForward()
 # server$refresh()
-# server$deleteAllCookies()
 
 # Localizar elementos usando XPath (ou CSS selector)
-botao_comprar_passagem <- server$findElement(using = 'xpath', '//*[@id="purchase-box"]/form[2]/div[1]/div[1]/a')
+botao_comprar_passagem <- 
+  server$findElement(
+    using = 'xpath', 
+    '//*[@id="purchase-box"]/form[2]/div[1]/div[1]/a'
+  )
 
 # Clicar em um elemento
 botao_comprar_passagem$clickElement()
 
 # Preencher o campo origem:
 # Localizar campo de origem
-campo_origem <- server$findElement(using = 'xpath', '//*[@id="purchase-box"]/form[2]/div[1]/div[2]')
+campo_origem <- 
+  server$findElement(
+    'xpath', 
+    '//*[@id="purchase-box"]/form[2]/div[1]/div[2]'
+  )
 # Clicar no campo
 campo_origem$clickElement()
 # Enviar comandos de teclado
-campo_origem$sendKeysToActiveElement(list('Rio de Janeiro', key = 'enter'))
+campo_origem$sendKeysToActiveElement(
+  list('Rio de Janeiro', key = 'enter')
+)
 # Enviar comandos de teclado usando represenação UTF-8
+# Representação das teclas em UTF-8:
+# https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidvalue
 campo_origem$clickElement()
-campo_origem$sendKeysToActiveElement(list('Rio de Janeiro', '\uE007'))
-# Representação das teclas em UTF-8: https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol#sessionsessionidelementidvalue
+campo_origem$sendKeysToActiveElement(
+  list('Rio de Janeiro', '\uE007')
+)
+
 # Enviar comandos de teclado para buscar opções
 campo_origem$clickElement()
-campo_origem$sendKeysToActiveElement(list('Rio de Janeiro', '\uE015', '\uE015', '\uE007'))
+campo_origem$sendKeysToActiveElement(
+  list('Rio de Janeiro', '\uE015', '\uE015', '\uE007')
+)
 
 # Preencher campo de destino
-campo_destino <- server$findElement('xpath', '//*[@id="purchase-box"]/form[2]/div[1]/div[3]/div[1]/div[1]')
+campo_destino <- 
+  server$findElement(
+    'xpath', 
+    '//*[@id="purchase-box"]/form[2]/div[1]/div[3]/div[1]/div[1]'
+  )
 campo_destino$clickElement()
-campo_destino$sendKeysToActiveElement(list('Fortaleza', '\uE007'))
+campo_destino$sendKeysToActiveElement(
+  list('Fortaleza', '\uE007')
+)
 
 # Clicar na data de ida
-server$findElement('xpath', '//*[@id="purchase-box"]/form[2]/div[2]/div[8]/div[2]/div[1]')$clickElement()
+server$findElement(
+  'xpath', 
+  '//*[@id="purchase-box"]/form[2]/div[2]/div[8]/div[2]/div[1]'
+)$clickElement()
 # Selecionar a data de ida
-server$findElement('xpath', '//*[@id="ui-datepicker-div"]/div[1]/table/tbody/tr[3]/td[2]')$clickElement()
+server$findElement(
+  'xpath', 
+  '//*[@id="ui-datepicker-div"]/div[1]/table/tbody/tr[3]/td[2]'
+)$clickElement()
 # Clicar na data de volta
-server$findElement('xpath', '//*[@id="purchase-box"]/form[2]/div[2]/div[8]/div[2]/div[2]')$clickElement()
+server$findElement(
+  'xpath', 
+  '//*[@id="purchase-box"]/form[2]/div[2]/div[8]/div[2]/div[2]'
+)$clickElement()
 # Selecionar a data de volta
-server$findElement('xpath', '//*[@id="ui-datepicker-div"]/div[1]/table/tbody/tr[4]/td[2]')$clickElement()
+server$findElement(
+  'xpath', 
+  '//*[@id="ui-datepicker-div"]/div[1]/table/tbody/tr[4]/td[2]'
+)$clickElement()
 
 # Clicar no botão compre aqui
-botao_compre_aqui <- server$findElement('xpath', '//*[@id="btn-box-buy"]')
+botao_compre_aqui <- 
+  server$findElement(
+    'xpath', 
+    '//*[@id="btn-box-buy"]'
+  )
 botao_compre_aqui$clickElement()
 
 # Aguardar carregar tabelas de tarifas
-tabelas_tarifas <- server$findElements('xpath', '//*[@id="ida"]/div[1]/div/table | //*[@id="volta"]/div[1]/div/table')
-tabelas_carregadas <- map_lgl(tabelas_tarifas, ~ .x$isElementDisplayed() %>% unlist())
-while(!all(tabelas_carregadas)) { Sys.sleep(1) }
+tabelas_tarifas <- 
+  server$findElements(
+    'xpath', 
+    '//*[@id="ida"]/div[1]/div/table | //*[@id="volta"]/div[1]/div/table'
+  )
+tabelas_carregadas <- 
+  map_lgl(tabelas_tarifas, ~ .x$isElementDisplayed() %>% unlist())
+while(!all(tabelas_carregadas)) {
+  Sys.sleep(1)
+  tabelas_carregadas <- 
+    map_lgl(tabelas_tarifas, ~ .x$isElementDisplayed() %>% unlist())
+}
 
 # Coletar valores das tarifas
 # Primieira tarifa
-tarifa_elemento <- server$findElement('xpath', '//*[@id="ida"]/div[8]/div[5]/table[1]/tbody/tr/td[2]/div/label/span[1]')
+tarifa_elemento <- 
+  server$findElement(
+    'xpath', 
+    '//*[@id="ida"]/div[8]/div[5]/table[1]/tbody/tr/td[2]/div/label/span[1]'
+  )
 tarifa_elemento$getElementText()
 
 # Todas as tarifas, usando XPath
-tarifa_elementos <- server$findElements('xpath', '//span[@class="fareValue"]')
+tarifa_elementos <- 
+  server$findElements(
+    'xpath', 
+    '//span[@class="fareValue"]'
+  )
 tarifas <- map_chr(tarifa_elementos, ~ .x$getElementText() %>% unlist())
 
 # Todas as tarifas, usando classe
-tarifa_elementos <- server$findElements('class name', 'fareValue')
+tarifa_elementos <- 
+  server$findElements(
+    'class name', 
+    'fareValue'
+  )
 tarifas <- map_chr(tarifa_elementos, ~ .x$getElementText() %>% unlist())
 
 # Tarifas Comfort (Max)
-tarifa_elementos <- server$findElements('xpath', '//td[@class="taxa taxaComfort"]')
+tarifa_elementos <- 
+  server$findElements(
+    'xpath', 
+    '//td[@class="taxa taxaComfort"]'
+  )
 tarifas <- map_chr(tarifa_elementos, ~ .x$getElementText() %>% unlist())
-tarifas %>% str_remove('\\.') %>% str_replace(',', '.') %>% str_extract('([0-9]*\\.[0-9]{2})') %>% as.numeric()
+tarifas %>% 
+  str_remove('\\.') %>% 
+  str_replace(',', '.') %>% 
+  str_extract('([0-9]*\\.[0-9]{2})') %>% 
+  as.numeric()
 
 # Tarifas Promocionais (Light)
-tarifa_elementos <- server$findElements('xpath', '//td[@class="taxa taxaPromocional"]')
+tarifa_elementos <- 
+  server$findElements(
+    'xpath', 
+    '//td[@class="taxa taxaPromocional"]'
+  )
 tarifas <- 
   map_chr(tarifa_elementos, ~ .x$getElementText() %>% unlist()) %>% 
   str_remove('\\.') %>% 
@@ -252,7 +352,11 @@ tarifas <-
   as.numeric()
 
 # Tarifas de ida promocionais (Light)
-tarifa_elementos <- server$findElements('xpath', '//*[@id="ida"]/div/div/table/tbody/tr/td[@class="taxa taxaPromocional"]')
+tarifa_elementos <- 
+  server$findElements(
+    'xpath', 
+    '//*[@id="ida"]/div/div/table/tbody/tr/td[@class="taxa taxaPromocional"]'
+  )
 tarifas <- map_chr(tarifa_elementos, ~ .x$getElementText() %>% unlist()) %>% 
   str_remove('\\.') %>% 
   str_replace(',', '.') %>% 

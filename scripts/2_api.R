@@ -35,7 +35,7 @@ tipo <- 'people'
 valor <- 1
 url <- paste(url_base, tipo, valor, sep = '/')
 # Enviar solicitação (com identificação)
-resposta <- GET(url, user_agent('This  is a test | email: augusto.fadel@ibge.gov.br'))
+resposta <- GET(url, user_agent('This is a test | email: augusto.fadel@ibge.gov.br'))
 # Extrair conteúdo
 personagem <- content(resposta)
 # Verificar conteúdo
@@ -119,7 +119,6 @@ library(httr)
 library(tidyverse)
 
 # Cotações diárias e taxas de câmbio
-# https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)?@moeda="EUR"&@dataCotacao="04-11-2018"&$top=100&$format=json
 url_base <- "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)"
 parametros <- 
   list(

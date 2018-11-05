@@ -67,7 +67,7 @@ knitr::include_graphics("images/structured_data.PNG")
 ```
   
 ```{r echo=FALSE, out.height = '250px'}
-knitr::include_graphics("images/unstructured_data_3.PNG")
+knitr::include_graphics("images/unstructured_data.PNG")
 ```
 </div>
 
@@ -81,16 +81,16 @@ knitr::include_graphics("images/selenium.png")
 
 # Download
 
-## tipos de arquivos
+## download
 
-### tipos de arquivos  
-
-- csv (comma-separated values)
-- tsv (tab-separated values)
-- MS Excel (xls, xlsx)
-- zip
-- [JSON](https://json.org/example.html) (JavaScript Object Notation)
-- [XML](https://www.w3.org/XML/) (Extensible Markup Language)
+### Tipos de arquivos  
+  
+- csv (comma-separated values): `read.csv()`
+- tsv (tab-separated values): `readr::read_tsv()`
+- MS Excel (xls, xlsx): `readxl::read_excel()`
+- zip: `unzip()`
+- [JSON](https://json.org/example.html) (JavaScript Object Notation): `jsonlite::read_json()`
+- [XML](https://www.w3.org/XML/) (Extensible Markup Language): `xml2::read_xml()`
 
 ## download {.flexbox .vcenter}
 
@@ -264,7 +264,7 @@ knitr::include_graphics("images/phone.png")
 21 2142-0452  
 <br>
 ```{r echo=FALSE, out.width = "32px"}
-knitr::include_graphics("images/mail.png")
+knitr::include_graphics("images/email.png")
 ```
 augusto.fadel@ibge.gov.br  
 <br>

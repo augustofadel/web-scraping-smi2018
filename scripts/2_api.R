@@ -35,7 +35,7 @@ tipo <- 'people'
 valor <- 1
 url <- paste(url_base, tipo, valor, sep = '/')
 # Enviar solicitação (com identificação)
-resposta <- GET(url, user_agent('This is a test | email: augusto.fadel@ibge.gov.br'))
+resposta <- GET(url, user_agent('This is a test'))
 # Extrair conteúdo
 personagem <- content(resposta)
 # Verificar conteúdo
@@ -88,7 +88,7 @@ nivel_territorial <- 'n1/all'
 variavel <- 'v/2266'
 url <- paste(url_base, tabela, periodo, nivel_territorial, variavel, sep = '/')
 # Enviar solicitação
-resposta <- GET(url, user_agent('SMI 2018: mini-curso web scraping | email: augusto.fadel@ibge.gov.br'))
+resposta <- GET(url, user_agent('SMI 2018: mini-curso web scraping'))
 # Verificar status da solicitação
 http_status(resposta)
 # Verificar tipo da solicitação
@@ -157,7 +157,7 @@ cotacao_dia <-
         GET(
           url_base, 
           query = parametros, 
-          user_agent('SMI 2018: mini-curso web scraping | email: augusto.fadel@ibge.gov.br')
+          user_agent('SMI 2018: mini-curso web scraping')
         )
       http_status(resposta)
       content(resposta)[[2]] %>% bind_rows()
